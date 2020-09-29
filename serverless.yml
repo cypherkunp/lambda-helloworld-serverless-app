@@ -1,0 +1,14 @@
+service: lambda-helloworld-serverless-app
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: serverless-admin
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: lambda/hello-world
+          method: get
